@@ -12,10 +12,10 @@ namespace Exam.DataCollection
 {
     public class DataCollectionModel : IDataCollection<Model>
     {
+       public List<Model> models = new List<Model>();
         public List<Model> Load()
         {
-            List<Model> models = new List<Model>();
-
+           
             XmlSerializer formatter = new XmlSerializer(typeof(List<Model>));
             try
             {
@@ -33,7 +33,7 @@ namespace Exam.DataCollection
 
         public void Save()
         {
-            List<Model> models = new List<Model>();
+            
             XmlSerializer formatter = new XmlSerializer(typeof(List<Modification>));
             try
             {

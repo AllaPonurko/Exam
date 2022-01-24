@@ -8,9 +8,10 @@ namespace Exam.Entities
 {[Serializable]
     public class Model:Base
     {
-        public Model() { }
+        public Model() { modifications = new List<Modification>(); }
       
         public List<Modification> modifications { get; set; }
+
         private Guid modificationId;
 
         public Guid GetModificationId()
@@ -24,7 +25,7 @@ namespace Exam.Entities
         }
         public override string ToString()
         {
-            return $"Name";
+            return $"{Name}";
         }
     }
 }

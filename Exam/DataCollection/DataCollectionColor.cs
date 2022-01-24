@@ -12,10 +12,9 @@ namespace Exam.DataCollection
 {
     public class DataCollectionColor : IDataCollection<Color>
     {
+        public List<Color> colors = new List<Color>();
         public List<Color> Load()
         {
-            List<Color> colors = new List<Color>();
-
             XmlSerializer formatter = new XmlSerializer(typeof(List<Color>));
             try
             {
@@ -33,11 +32,11 @@ namespace Exam.DataCollection
 
         public void Save()
         {
-            List<Color> colors = new List<Color>();
+            
             XmlSerializer formatter = new XmlSerializer(typeof(List<Color>));
             try
             {
-                using (FileStream fs = new FileStream("modification.xml", FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream("colors.xml", FileMode.OpenOrCreate))
                 {
                     formatter.Serialize(fs, colors);
                 }

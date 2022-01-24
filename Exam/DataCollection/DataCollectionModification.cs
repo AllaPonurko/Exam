@@ -12,14 +12,13 @@ namespace Exam.DataCollection
 {
     public class DataCollectionModification : IDataCollection<Modification>
     {
-        
+        public List<Modification> modifications = new List<Modification>();
         /// <summary>
-     /// выгрузить список модификаций
-     /// </summary>
+        /// выгрузить список модификаций
+        /// </summary>
         public List<Modification> Load()
         {
-            List<Modification> modifications = new List<Modification>();
-
+           
             XmlSerializer formatter = new XmlSerializer(typeof(List<Modification>));
             try
             {
@@ -39,7 +38,7 @@ namespace Exam.DataCollection
         /// </summary>
         public void Save()
         {
-            List<Modification> modifications = new List<Modification>();
+            
             XmlSerializer formatter = new XmlSerializer(typeof(List<Modification>));
             try
             {

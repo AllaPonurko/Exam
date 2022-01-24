@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Exam.Entities;
+using System;
+using static System.Console;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Exam
 {
@@ -6,7 +10,24 @@ namespace Exam
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DBContext context = new DBContext();
+            context.Print();
+            context.ChoiceColor();
+            string color= context.SeachColor();
+            WriteLine($"Цвет\t"+color);
+            IEnumerable<Model> Result = context.SeachByColor(color);
+            IEnumerable<Modification> ResultMod = context._SeachByColor(color);
+            foreach (var item in Result)
+            {
+                WriteLine($"========================");
+                WriteLine(item.ToString()); 
+                foreach(var _item in ResultMod)
+                {
+                    if (item.modifications.Contains(_item))
+                        WriteLine(_item.ToString());
+                }
+            }
+            WriteLine($"========================");
         }
     }
 }

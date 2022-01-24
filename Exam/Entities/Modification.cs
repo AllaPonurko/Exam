@@ -9,6 +9,10 @@ namespace Exam.Entities
    public class Modification:Base
     {
         public List<Color> colors { get; set; }
+        public Modification()
+        {
+            colors = new List<Color>();
+        }
         private Guid colorId;
 
         public Guid GetColorId()
@@ -22,7 +26,7 @@ namespace Exam.Entities
         }
         public override string ToString()
         {
-            return $"Name";
+            return $"{Name}";
         }
     }
 }

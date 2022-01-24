@@ -10,7 +10,8 @@ namespace Exam.Entities
     {
         public override string ToString()
         {
-            return $"Name";
+            return $"{Name}";
         }
+
     }
 }

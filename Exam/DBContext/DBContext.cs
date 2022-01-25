@@ -104,6 +104,7 @@ namespace Exam.Entities
                 WriteLine($"@@@@@@@@@@@@@@@@@@@@@\n" + $"Модель:\t" + item.
                     ToString());
                 {
+                    WriteLine($"=======================");
                     foreach (var item_ in item.modifications)
                     {
                         WriteLine($"Модификация:\t" + item_.ToString());
@@ -112,6 +113,7 @@ namespace Exam.Entities
                             WriteLine($"Доступный цвет:\t" + _item.ToString());
 
                         }
+                        WriteLine($"=======================");
                     }
                 }
                 WriteLine($"@@@@@@@@@@@@@@@@@@@@@");

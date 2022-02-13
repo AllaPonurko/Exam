@@ -10,18 +10,18 @@ using static System.Console;
 
 namespace Exam.DataCollection
 {
-    public class DataCollectionModel : IDataCollection<Model>
+    public class DataCollectionModel : IDataCollection<Model_>
     {
-       public List<Model> models = new List<Model>();
-        public List<Model> Load()
+       public List<Model_> models = new List<Model_>();
+        public List<Model_> Load()
         {
            
-            XmlSerializer formatter = new XmlSerializer(typeof(List<Model>));
+            XmlSerializer formatter = new XmlSerializer(typeof(List<Model_>));
             try
             {
                 using (FileStream fs = new FileStream("models.xml", FileMode.Open))
                 {
-                    models = (List<Model>)formatter.Deserialize(fs);
+                    models = (List<Model_>)formatter.Deserialize(fs);
                 }
             }
             catch (Exception e)

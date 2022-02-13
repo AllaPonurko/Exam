@@ -10,12 +10,12 @@ namespace Exam
     {
         static void Main(string[] args)
         {
-            DBContext context = new DBContext();
+            MyDBContext context = new MyDBContext();
             context.Print();
             context.ChoiceColor();
             string color= context.SeachColor();
             WriteLine($"Цвет\t"+color);
-            IEnumerable<Model> Result = context.SeachByColor(color);
+            IEnumerable<Model_> Result = context.SeachByColor(color);
             IEnumerable<Modification> ResultMod = context._SeachByColor(color);
             foreach (var item in Result)
             {
@@ -23,7 +23,7 @@ namespace Exam
                 WriteLine(item.ToString()); 
                 foreach(var _item in ResultMod)
                 {
-                    if (item.modifications.Contains(_item))
+                    if (item.modifications_.Contains(_item))
                         WriteLine(_item.ToString());
                 }
             }

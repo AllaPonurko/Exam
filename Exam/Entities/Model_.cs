@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Exam.Entities
 {[Serializable]
-    public class Model:Base
+    public class Model_:Base
     {
-        public Model() { modifications = new List<Modification>(); }
+        public Model_() { modifications_ = new List<Modification>(); }
       
-        public List<Modification> modifications { get; set; }
+        public List<Modification> modifications_ { get; set; }
 
         private Guid modificationId;
 

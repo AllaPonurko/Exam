@@ -15,7 +15,7 @@ namespace Exam
     public class MyDBContext:DbContext
     {
         public List<Model_> Models { get; set; }
-        public DbSet<Base> bases { get; set; }
+        
         public DbSet<Color> colores{ get; set; }
         public DbSet<Model_> models { get; set; }
         public DbSet<Modification> modifications { get; set; }
